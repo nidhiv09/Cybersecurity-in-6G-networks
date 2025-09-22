@@ -1,0 +1,24 @@
+[project]
+name = "repl-nix-workspace"
+version = "0.1.0"
+description = "Edge-based reinforcement learning system for cyber threat detection"
+requires-python = ">=3.11"
+dependencies = [
+    "flask-cors>=5.0.0",
+    "flask>=3.1.0",
+    "gymnasium>=1.0.0",
+    "numpy>=2.2.3",
+    "pandas>=2.2.3",
+    "pyyaml>=6.0.2",
+    "scikit-learn>=1.6.1",
+    "torch>=2.6.0",
+]
+
+[[tool.uv.index]]
+explicit = true
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+
+[tool.uv.sources]
+torch = [{ index = "pytorch-cpu", marker = "platform_system == 'Linux'" }]
+torchvision = [{ index = "pytorch-cpu", marker = "platform_system == 'Linux'" }]
